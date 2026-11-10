@@ -76,6 +76,8 @@
   Repo: see README.md · MIT licensed</p>
 </footer>
 
+<!-- near-api-js bundle references Node's `global` and `process` (crypto/env shims); define them for browsers. -->
+<script>window.global = window; window.process = window.process || { env: {} };</script>
 <script src="bundle.js"></script>
 </body>
 </html>
