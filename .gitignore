@@ -1,0 +1,11 @@
+node_modules/
+build/
+agent/dist/
+test-build/
+frontend/bundle.js
+frontend/bundle.js.map
+.env
+*.key
+*.pem
+runs/
+.DS_Store

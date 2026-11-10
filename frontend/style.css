@@ -1,0 +1,31 @@
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 880px; margin: 0 auto; padding: 16px; color: #1a1a2e; background: #f7f7fb; line-height: 1.5; }
+header h1 { margin: 0; font-size: 2rem; }
+.sub { color: #444; }
+.card { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+h2 { margin: 0 0 12px; font-size: 1.15rem; }
+label { display: block; margin: 10px 0; font-weight: 600; font-size: 0.9rem; }
+label.inline { display: inline-block; font-weight: 400; margin: 0 0 0 12px; }
+input[type=text], input[type=password], input[type=number], textarea { display: block; width: 100%; margin-top: 4px; padding: 9px 10px; border: 1px solid #bbb; border-radius: 8px; font: inherit; box-sizing: border-box; }
+button { padding: 9px 16px; border: 0; border-radius: 8px; background: #1a1a2e; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+button.secondary { background: #e8e8f0; color: #1a1a2e; }
+button.small { padding: 5px 10px; font-size: 0.85rem; }
+.row { display: flex; align-items: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.status { font-size: 0.9rem; color: #555; }
+.status.error { color: #b00020; }
+.status.ok { color: #0a7d2c; }
+.hint { font-size: 0.85rem; color: #666; }
+.budget { display: flex; gap: 24px; flex-wrap: wrap; font-size: 1.05rem; }
+.budget b { font-size: 1.3rem; display: block; }
+.job { border: 1px solid #ddd; border-radius: 10px; padding: 12px 14px; margin: 10px 0; background: #fbfbfe; }
+.job h3 { margin: 0 0 6px; font-size: 1rem; }
+.job .meta { font-size: 0.88rem; color: #444; }
+.pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; background: #e8e8f0; }
+.pill.open { background: #fff3cd; } .pill.quoted, .pill.countered { background: #cfe8ff; }
+.pill.accepted, .pill.submitted { background: #e2d9ff; }
+.pill.done { background: #c8f0d4; } .pill.refunded, .pill.cancelled { background: #ffd9d9; }
+.receipt { border-left: 4px solid #0a7d2c; background: #f0faf3; padding: 10px 12px; margin: 10px 0; border-radius: 0 8px 8px 0; font-size: 0.92rem; }
+.receipt.fail { border-left-color: #b00020; background: #fdf0f0; }
+code { background: #eee; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+footer { color: #777; font-size: 0.85rem; margin-top: 24px; }
+a { color: #2440c9; }

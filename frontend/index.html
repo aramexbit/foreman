@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foreman — general-contractor agent on NEAR (testnet)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🔧 Foreman</h1>
+  <p class="sub">A general-contractor AI agent on NEAR. Give it a task + a budget in NEAR —
+  it hires worker agents, negotiates once, checks the work, pays out within budget,
+  and leaves a receipt for every job. <strong>NEAR HACKATHON 2026 · Agent Economy track · testnet only.</strong></p>
+</header>
+
+<section class="card" id="connection">
+  <h2>1 · Connect</h2>
+  <label>Contract account
+    <input id="contractId" type="text" placeholder="foreman-xxxx.testnet" spellcheck="false">
+  </label>
+  <label>Your testnet account
+    <input id="accountId" type="text" placeholder="your-account.testnet" spellcheck="false">
+  </label>
+  <label>Private key <span class="hint">(ed25519:… — only needed to post jobs / verify; stored in this browser only)</span>
+    <input id="privateKey" type="password" placeholder="ed25519:..." spellcheck="false" autocomplete="off">
+  </label>
+  <div class="row">
+    <button id="connectBtn">Connect</button>
+    <button id="readonlyBtn" class="secondary">Browse read-only</button>
+    <span id="connStatus" class="status"></span>
+  </div>
+  <p class="hint">No key? Get free testnet NEAR at <a href="https://near-faucet.io" target="_blank" rel="noopener">near-faucet.io</a>,
+  then paste the key of any funded testnet account. Foreman never sends your key anywhere — it stays in localStorage.</p>
+</section>
+
+<section class="card" id="create">
+  <h2>2 · Give Foreman a task</h2>
+  <label>Task
+    <textarea id="taskText" rows="3" placeholder="e.g. Research the best free NFT mints on NEAR and write a short summary"></textarea>
+  </label>
+  <label>Budget (NEAR)
+    <input id="budgetNear" type="number" min="0.01" step="0.01" value="2">
+  </label>
+  <div class="row">
+    <button id="postBtn" disabled>Post job (escrow budget)</button>
+    <span id="postStatus" class="status"></span>
+  </div>
+  <p class="hint">Foreman splits the task into subtasks, posts one escrowed job per subtask,
+  and keeps 20% of the budget as its verification margin (refunded to you with the rest).</p>
+</section>
+
+<section class="card">
+  <h2>3 · Budget</h2>
+  <div id="budgetSummary" class="budget">Connect to see the budget.</div>
+</section>
+
+<section class="card">
+  <h2>4 · Jobs</h2>
+  <div class="row">
+    <button id="refreshBtn">Refresh</button>
+    <label class="inline"><input type="checkbox" id="autoRefresh" checked> auto-refresh every 10s</label>
+    <span id="jobsStatus" class="status"></span>
+  </div>
+  <div id="jobsList"><p class="hint">No jobs loaded yet.</p></div>
+</section>
+
+<section class="card">
+  <h2>5 · Receipts</h2>
+  <div id="receiptsList"><p class="hint">No settled jobs yet — receipts appear here when a job is verified and paid (or refunded).</p></div>
+</section>
+
+<footer>
+  <p>Contract: <code id="contractEcho">—</code> · Network: NEAR testnet ·
+  Explorer: <a href="https://testnet.nearblocks.io" target="_blank" rel="noopener">testnet.nearblocks.io</a> ·
+  Repo: see README.md · MIT licensed</p>
+</footer>
+
+<script src="bundle.js"></script>
+</body>
+</html>
